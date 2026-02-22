@@ -432,7 +432,8 @@ body {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-.popup-icon { font-size: 56px; margin-bottom: 12px; }
+.popup-icon { display: block; width: 120px; height: 120px; margin: 0 auto 12px; object-fit: contain; }
+.popup-icon-emoji { font-size: 120px; width: auto; height: auto; line-height: 1; }
 
 .popup-box h2 {
     font-size: 22px;

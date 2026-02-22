@@ -18,19 +18,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'dismi
     exit;
 }
 
-if ($show_popup): ?>
+if ($show_popup):
+    $base = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/') ?: '/';
+    $robotGif = $base . '/gif/robot.gif';
+    $hasRobotGif = file_exists(__DIR__ . '/../gif/robot.gif');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAPTCHA Challenge</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?= $base ?>/css/style.css">
+    <?php if ($hasRobotGif): ?>
+    <style>
+        .page-robot-ka { background: linear-gradient(135deg, rgba(15,12,41,0.85) 0%, rgba(48,43,99,0.85) 50%, rgba(36,36,62,0.85) 100%), url('<?= $robotGif ?>') center/cover no-repeat fixed; }
+    </style>
+    <?php endif; ?>
 </head>
-<body class="page-login">
+<body class="page-login page-robot-ka">
 <div class="login-card">
     <div class="login-header">
-        <div class="popup-icon">&#129302;</div>
+        <?php if (!$hasRobotGif): ?>
+        <div class="popup-icon popup-icon-emoji">&#129302;</div>
+        <?php endif; ?>
         <h2>Robot ka?</h2>
         <p class="subtitle">Pag-prove nga dili ka robot!</p>
     </div>
