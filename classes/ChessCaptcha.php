@@ -1,6 +1,6 @@
 <?php
 /**
- * Full Chess Match CAPTCHA — beat the bot to pass.
+ * Full Chess Match CAPTCHA 
  *
  *   complete chess engine (all pieces, castling, en passant,
  *               promotion), pseudo-legal/legal move gen, attack detection,

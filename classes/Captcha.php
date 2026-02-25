@@ -10,8 +10,8 @@ abstract class Captcha
     protected string $type;
 
     abstract public function getLabel(): string;
-    abstract public function handlePost(): ?string;       // returns error or null (if redirected)
-    abstract public function render(string $error): void; // outputs HTML
+    abstract public function handlePost(): ?string;       
+    abstract public function render(string $error): void; 
 
     public function getType(): string { return $this->type; }
 

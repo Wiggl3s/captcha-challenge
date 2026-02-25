@@ -1,12 +1,5 @@
 <?php
-/**
- * Front Controller — single entry point for all pages.
- *
- * PHP Concepts: front-controller pattern, spl_autoload_register,
- *               in_array() whitelist, require, $_GET routing.
- *
- * Routes: ?page=login | register | captcha-session | dashboard | logout
- */
+
 
 session_start();
 

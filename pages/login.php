@@ -1,10 +1,5 @@
 <?php
-/**
- * Login Page
- *
- * $_POST form handling, associative arrays,
- *               if/elseif/else, trim(), empty(), htmlspecialchars(), session-stored users.
- */
+
 
 if (!empty($_SESSION['user']) && !empty($_SESSION['captcha_passed'])) {
     header('Location: ?page=dashboard');
@@ -71,9 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="?page=register" class="btn btn-secondary btn-block">Create an Account</a>
             <?php endif; ?>
             <button type="submit" class="btn btn-primary btn-block">Login</button>
-            <p class="hint-text">
-                Try <strong>admin</strong> / <strong>password</strong> or <strong>demo</strong> / <strong>demo</strong>
-            </p>
         </form>
     </div>
 </body>
